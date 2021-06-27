@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
 
     private NotificationCompat.BigTextStyle bigTextStyle;
 
-    String longText = "Hacer la documentacion, organizar la reunion y subir el codigo a repositorio";
+    String longText = "linea1                " + "   linea 2 " +"";
 
 
     @Override
@@ -75,16 +75,16 @@ public class MainActivity extends Activity {
                                         .setContentTitle("Notificacion wear")
                                         .setContentText(longText)
                                         .setStyle(new NotificationCompat.InboxStyle()
-                                                .addLine("")
-                                                .addLine("")
-                                                .setBigContentTitle("Big Content Title")
+                                                .addLine("linea1")
+                                                .addLine("linea 2")
+                                                .setBigContentTitle("InboxStyle")
                                                 .setSummaryText("Summary text"))
                                         .setContentIntent(pendingIntent)
                                         .addAction(R.drawable.common_google_signin_btn_icon_dark, getString(R.string.Leyenda),
                                                 pendingIntent)
                                         .extend(wearableExtender)
                                         .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
-                                        .setStyle(bigTextStyle);
+                                        ;
 
                 nm.notify(idNotificacion, notificacion.build());
             }
